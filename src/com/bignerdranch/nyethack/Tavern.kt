@@ -1,4 +1,5 @@
-import kotlin.math.roundToInt
+package com.bignerdranch.nyethack
+
 import java.io.File
 const val TAVERN_NAME="Taernyl's Folly"
 
@@ -32,14 +33,17 @@ fun main(args: Array<String>) {
     }
     var orderCount = 0
     while (orderCount <= 9) {
-        placeorder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
+        placeorder(
+            uniquePatrons.shuffled().first(),
+            menuList.shuffled().first()
+        )
         orderCount++
     }
     displayPatronBalances()
 
 }
 private fun displayPatronBalances(){
-    patronGold.forEach{patron,balance->
+    patronGold.forEach{ patron, balance->
         println("$patron , balance: ${"%.2f".format(balance)}")
     }
 }
@@ -70,7 +74,7 @@ private fun placeorder(patronName:String,menuData:String){
     val message  = "$patronName buys a $name ($type) for $price."
     println(message)
 
-    performPurchase(price.toDouble(),patronName)
+    performPurchase(price.toDouble(), patronName)
 
     val phrase = if(name == "Dragon's Breath"){
         "$patronName exclaims: ${toDragonSpeak("Ah, delicious $name!")}"

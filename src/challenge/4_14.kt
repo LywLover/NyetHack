@@ -26,7 +26,7 @@ fun main(args: Array<String>) {
         in 15..74 -> "looks pretty hurt"
         else -> "is in awful condition!"
     }
-    //Player status
+    //com.bignerdranch.nyethack.Player status
     println(("Aura: ${if(auraVisible) auraColor else "NONE"}" + "(Blessed: ${if(isBlessed) "YES" else "NO"})"))
     println("$name $healthStatus")
 }

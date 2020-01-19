@@ -28,7 +28,7 @@ fun performPurchase(price:Double){
     displayBalance()
 }
 private  fun displayBalance(){
-    println("Player's purse balance: Gold: $playerGold , Silver: $playerSilver")
+    println("com.bignerdranch.nyethack.Player's purse balance: Gold: $playerGold , Silver: $playerSilver")
 }
 private fun toDragonSpeak(phrase:String)=
     phrase.replace(Regex("[aeiou]")){
