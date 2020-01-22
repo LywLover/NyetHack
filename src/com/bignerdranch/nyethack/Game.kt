@@ -4,8 +4,12 @@ fun main(args: Array<String>) {
 
 
 
-    val player = Player()
+    val player = Player("madrigal")
     player.castFireball()
+
+    var currentRoom:Room = TownSquare()
+    println(currentRoom.description())
+    println(currentRoom.load())
 
     //Aura
     player.auraColor()
