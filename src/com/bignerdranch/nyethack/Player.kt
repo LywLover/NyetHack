@@ -29,6 +29,7 @@ class Player (
     }
 
     val hometown by lazy{selectHomwtown()}
+    var currentPosition = Coordinate(0,0)
 
     fun auraColor(): String {
         val auraVisible = isBlessed && healthPoints > 50 || isImmortal
