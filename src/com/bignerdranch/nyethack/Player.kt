@@ -4,10 +4,21 @@ import java.io.File
 
 class Player (
     _name: String,
-    var healthPoints: Int = 100,
+    override var healthPoints: Int = 100,
     var isBlessed: Boolean = true,
     private val isImmortal: Boolean = false
-) {
+) : Fightable{
+    override val diceCount: Int = 3
+    override val diceSides: Int = 6
+    override fun attack(opponent: Fightable): Int {
+      val damageDealt = if(isBlessed){
+          damageRoll * 2
+      }else{
+          damageRoll
+      }
+        opponent.healthPoints -= damageDealt
+        return damageDealt
+    }
 
     init {
         require(healthPoints > 0) { "healthPoints must be greater than zero" }
