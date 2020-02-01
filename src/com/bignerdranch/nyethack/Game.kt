@@ -17,6 +17,7 @@ object Game{
     private var currentRoom:Room = TownSquare()
     private var run =true
 
+
     private var worldMap = listOf(listOf(currentRoom,Room("Tavern"),Room("Back Room")),
                                 listOf(Room("Long Corridor"),Room("Generic Room")))
 
@@ -38,6 +39,10 @@ object Game{
             if(!run){
                 break
             }
+        }
+        currentRoom.configurePitGoblin {goblin ->
+            goblin.healthPoints = dangerLevel *3
+            goblin
         }
     }
 
